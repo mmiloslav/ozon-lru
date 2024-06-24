@@ -1,0 +1,6 @@
+#app binary files
+cmd/lruapp/lruapp
+cmd/lruapp/main
+
+#DS_Store
+*.DS_Store
