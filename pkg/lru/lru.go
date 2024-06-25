@@ -11,8 +11,8 @@ import (
 
 // errors
 const (
-	errKeyNotFound = "key not found"
-	errKeyExpired  = "key expired"
+	ErrKeyNotFound = "key not found"
+	ErrKeyExpired  = "key expired"
 )
 
 // интерфейс ILRUCache
@@ -86,12 +86,12 @@ func (lru *LRUCache) Get(ctx context.Context, key string) (interface{}, time.Tim
 		if time.Now().After(element.Value.(Pair).expiresAt) {
 			lru.list.Remove(element)
 			delete(lru.cache, key)
-			return nil, time.Time{}, errors.New(errKeyExpired)
+			return nil, time.Time{}, errors.New(ErrKeyExpired)
 		}
 		lru.list.MoveToFront(element)
 		return element.Value.(Pair).value, element.Value.(Pair).expiresAt, nil
 	}
-	return nil, time.Time{}, errors.New(errKeyNotFound)
+	return nil, time.Time{}, errors.New(ErrKeyNotFound)
 }
 
 // получение всего наполнения кэша в виде двух слайсов: слайса ключей и слайса значений.
@@ -125,7 +125,7 @@ func (lru *LRUCache) Evict(ctx context.Context, key string) (interface{}, error)
 		delete(lru.cache, key)
 		return element.Value.(Pair).value, nil
 	}
-	return nil, errors.New(errKeyNotFound)
+	return nil, errors.New(ErrKeyNotFound)
 }
 
 // очищение всего кеша

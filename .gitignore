@@ -4,3 +4,6 @@ cmd/lruapp/main
 
 #DS_Store
 *.DS_Store
+
+# coverage.out
+*coverage.out

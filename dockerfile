@@ -7,6 +7,7 @@ COPY ./cmd/ /go/cmd
 COPY ./deployments/ /go/deployments
 COPY ./internal/ /go/internal
 COPY ./pkg/ /go/pkg
+COPY ./test/ /go/test
 
 COPY ./go.mod /go/
 COPY ./go.sum /go/
