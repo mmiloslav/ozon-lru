@@ -45,6 +45,7 @@ func main() {
 	wg.Wait()
 }
 
+// ф-я создания кофигурации, кеша и запуска сервера
 func processRequests() {
 	conf, err := config.InitConf()
 	if err != nil {

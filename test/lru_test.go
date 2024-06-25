@@ -1,3 +1,4 @@
+// пакет тестов
 package test
 
 import (
@@ -8,6 +9,7 @@ import (
 	"lru"
 )
 
+// тест на добавление и получения данных из LRU кеша
 func TestPutAndGet(t *testing.T) {
 	cache := lru.NewLRUCache(2)
 	ctx := context.TODO()
@@ -34,6 +36,7 @@ func TestPutAndGet(t *testing.T) {
 	}
 }
 
+// тест на просроченные данные
 func TestExpiration(t *testing.T) {
 	cache := lru.NewLRUCache(2)
 	ctx := context.TODO()
@@ -57,6 +60,7 @@ func TestExpiration(t *testing.T) {
 	}
 }
 
+// тест на удаление
 func TestEvict(t *testing.T) {
 	cache := lru.NewLRUCache(2)
 	ctx := context.TODO()
@@ -87,6 +91,7 @@ func TestEvict(t *testing.T) {
 	}
 }
 
+// тест на удаление всех данных
 func TestEvictAll(t *testing.T) {
 	cache := lru.NewLRUCache(2)
 	ctx := context.TODO()
@@ -129,6 +134,7 @@ func TestEvictAll(t *testing.T) {
 	}
 }
 
+// тест на получение всех данных
 func TestGetAll(t *testing.T) {
 	cache := lru.NewLRUCache(2)
 	ctx := context.TODO()
@@ -174,6 +180,7 @@ func TestGetAll(t *testing.T) {
 	}
 }
 
+// тест на вместимость кеша
 func TestLRUCapacity(t *testing.T) {
 	cache := lru.NewLRUCache(2)
 	ctx := context.TODO()

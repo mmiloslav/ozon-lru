@@ -1,3 +1,4 @@
+// пакет тестов
 package test
 
 import (
